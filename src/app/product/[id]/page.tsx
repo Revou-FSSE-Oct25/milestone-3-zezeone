@@ -2,11 +2,22 @@ import { getProductById } from "@/services/ProductService"
 import { notFound } from "next/navigation"
 import AddToCartButton from "@/components/product/AddToCartButton"
 
+
+export async function generateStaticParams() {
+  const res = await fetch("https://api.escuelajs.co/api/v1/products")
+  const products = await res.json()
+
+  return products.slice(0, 20).map((product: any) => ({
+    id: product.id.toString(),
+  }))
+}
+
 export default async function ProductDetailPage({
   params,
 }: {
   params: { id: string }
 }) {
+  // SSR
   const product = await getProductById(Number(params.id))
 
   if (!product) return notFound()
