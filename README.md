@@ -1,38 +1,183 @@
-Demo my project, please open https://milestone-3-zezeone.vercel.app/
+# 🛍️ LapakShop – Simple E-Commerce with Next.js
+📌 Overview
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+LapakShop is a simple e-commerce web application built using Next.js (App Router).
+This project demonstrates modern web development concepts including:
 
-## Getting Started
+Static Site Generation (SSG)
 
-First, run the development server:
+Server-Side Rendering (SSR)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Client-Side Data Fetching
+
+Dynamic Routing
+
+Global State Management (Cart)
+
+Error & Loading Handling
+
+The application fetches product data from a public API and allows users to browse products, view details, and add items to a shopping cart.
+
+🔗 Live Demo:
+https://milestone-3-zezeone.vercel.app/
+
+🔗 Source Code Repository:
+https://github.com/Revou-FSSE-Oct25/milestone-3-zezeone
+
+🚀 Features Implemented
+## 🏠 Home Page (Product Listing)
+
+Fetches products from FakeStore API (Escuela API).
+
+Uses Client-Side Rendering (CSR) with useEffect.
+
+Displays products in a responsive grid layout.
+
+Shows:
+
+Product image
+
+Product title
+
+Product price
+
+Clicking a product navigates to its detail page using dynamic routing.
+
+## 📄 Product Detail Page
+
+Uses Server-Side Rendering (SSR).
+
+Dynamic route using [id].
+
+Fetches product data based on route parameter.
+
+Displays:
+
+Product image
+
+Product title
+
+Product description
+
+Product price
+
+Implements Add to Cart button.
+
+## ⚡ Performance Optimization
+
+Uses generateStaticParams() to pre-render selected product pages at build time (Hybrid SSG + SSR).
+
+Implements loading.tsx for better loading experience.
+
+Implements error.tsx for graceful error handling.
+
+## 🛒 Shopping Cart
+
+Global state management using React Context API.
+
+Features:
+
+Add product to cart
+
+Increase quantity automatically
+
+Remove product
+
+Clear cart
+
+Cart state persists during session navigation.
+
+🧠 Technical Implementation
+✅ Next.js Fundamentals
+
+Uses App Router
+
+File-based routing
+
+Dynamic routing with [id]
+
+Component-based architecture
+
+Props passing between components
+
+Proper use of useState and useEffect
+
+## ✅ Routing & Navigation
+
+next/link for client-side navigation
+
+Dynamic route parameter handling
+
+Server component + Client component separation
+
+No unnecessary page reloads
+
+## ✅ Data Fetching Strategy
+Page	Rendering Strategy
+Home	Client-Side Fetching (CSR)
+Product Detail	Server-Side Rendering (SSR)
+FAQ / Promo	Static Site Generation (SSG)
+🛠 Technologies Used
+
+Next.js 16 (App Router)
+
+React 18
+
+TypeScript
+
+Tailwind CSS
+
+Vercel (Deployment)
+
+Public API: https://api.escuelajs.co
+
+```
+📁 Project Structure
+src/
+ ├── app/
+ │   ├── page.tsx
+ │   ├── product/[id]/page.tsx
+ │   ├── product/[id]/loading.tsx
+ │   ├── product/[id]/error.tsx
+ │   ├── cart/page.tsx
+ │   ├── faq/page.tsx
+ │   ├── promo/page.tsx
+ │   └── layout.tsx
+ │
+ ├── components/
+ │   ├── nav/
+ │   └── product/
+ │
+ ├── context/
+ │   └── CartContext.tsx
+ │
+ ├── services/
+ │   └── ProductService.ts
+ │
+ └── types/
+     └── product.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📈 Learning Outcomes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Through this project, the following concepts were implemented:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Understanding Next.js App Router architecture
 
-## Learn More
+Difference between CSR, SSR, and SSG
 
-To learn more about Next.js, take a look at the following resources:
+Dynamic routing with [id]
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Global state management using Context API
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Error boundary implementation in Next.js
 
-## Deploy on Vercel
+Proper separation between Server and Client components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Production deployment workflow with Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🏁 Conclusion
+
+LapakShop successfully demonstrates the core fundamentals of Next.js development, including routing, rendering strategies, data fetching patterns, and state management.
+
+This project is structured using modern best practices and follows scalable architecture principles suitable for real-world applications.
