@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# 🛍️ LapakShop – Simple E-Commerce with Next.js
-=======
 🛍️ LapakShop – Simple E-Commerce with Next.js
->>>>>>> 11659d38945e7c4ba90a5104461a36567e72ee9a
 📌 Overview
 
 LapakShop is a simple e-commerce web application built using Next.js (App Router).
@@ -29,11 +25,7 @@ https://milestone-3-zezeone.vercel.app/
 https://github.com/Revou-FSSE-Oct25/milestone-3-zezeone
 
 🚀 Features Implemented
-<<<<<<< HEAD
-## 🏠 Home Page (Product Listing)
-=======
 🏠 Home Page (Product Listing)
->>>>>>> 11659d38945e7c4ba90a5104461a36567e72ee9a
 
 Fetches products from FakeStore API (Escuela API).
 
@@ -51,11 +43,7 @@ Product price
 
 Clicking a product navigates to its detail page using dynamic routing.
 
-<<<<<<< HEAD
-## 📄 Product Detail Page
-=======
 📄 Product Detail Page
->>>>>>> 11659d38945e7c4ba90a5104461a36567e72ee9a
 
 Uses Server-Side Rendering (SSR).
 
@@ -75,11 +63,7 @@ Product price
 
 Implements Add to Cart button.
 
-<<<<<<< HEAD
-## ⚡ Performance Optimization
-=======
 ⚡ Performance Optimization
->>>>>>> 11659d38945e7c4ba90a5104461a36567e72ee9a
 
 Uses generateStaticParams() to pre-render selected product pages at build time (Hybrid SSG + SSR).
 
@@ -87,11 +71,7 @@ Implements loading.tsx for better loading experience.
 
 Implements error.tsx for graceful error handling.
 
-<<<<<<< HEAD
-## 🛒 Shopping Cart
-=======
 🛒 Shopping Cart
->>>>>>> 11659d38945e7c4ba90a5104461a36567e72ee9a
 
 Global state management using React Context API.
 
@@ -122,11 +102,7 @@ Props passing between components
 
 Proper use of useState and useEffect
 
-<<<<<<< HEAD
-## ✅ Routing & Navigation
-=======
 ✅ Routing & Navigation
->>>>>>> 11659d38945e7c4ba90a5104461a36567e72ee9a
 
 next/link for client-side navigation
 
@@ -136,11 +112,7 @@ Server component + Client component separation
 
 No unnecessary page reloads
 
-<<<<<<< HEAD
-## ✅ Data Fetching Strategy
-=======
 ✅ Data Fetching Strategy
->>>>>>> 11659d38945e7c4ba90a5104461a36567e72ee9a
 Page	Rendering Strategy
 Home	Client-Side Fetching (CSR)
 Product Detail	Server-Side Rendering (SSR)
@@ -159,10 +131,7 @@ Vercel (Deployment)
 
 Public API: https://api.escuelajs.co
 
-<<<<<<< HEAD
 ```
-=======
->>>>>>> 11659d38945e7c4ba90a5104461a36567e72ee9a
 📁 Project Structure
 src/
  ├── app/
@@ -187,81 +156,8 @@ src/
  │
  └── types/
      └── product.ts
-<<<<<<< HEAD
 ```
-
-## 📈 Learning Outcomes
-
-Through this project, the following concepts were implemented:
-
-Understanding Next.js App Router architecture
-
-Difference between CSR, SSR, and SSG
-
-Dynamic routing with [id]
-
-Global state management using Context API
-
-Error boundary implementation in Next.js
-
-Proper separation between Server and Client components
-
-Production deployment workflow with Vercel
-
-## 🏁 Conclusion
-=======
-
-📸 Screenshots
-🏠 Home Page
-
-Displays product grid with images and prices.
-
-📄 Product Detail Page
-
-Shows detailed product information and Add to Cart functionality.
-
-🛒 Cart Page
-
-Displays selected items and quantities.
-
-⚙️ How to Run Locally
-# Clone repository
-git clone https://github.com/Revou-FSSE-Oct25/milestone-3-zezeone
-
-# Go to project folder
-cd milestone-3-zezeone
-
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-
-
-Then open:
-
-http://localhost:3000
-
-📈 Learning Outcomes
-
-Through this project, the following concepts were implemented:
-
-Understanding Next.js App Router architecture
-
-Difference between CSR, SSR, and SSG
-
-Dynamic routing with [id]
-
-Global state management using Context API
-
-Error boundary implementation in Next.js
-
-Proper separation between Server and Client components
-
-Production deployment workflow with Vercel
-
 🏁 Conclusion
->>>>>>> 11659d38945e7c4ba90a5104461a36567e72ee9a
 
 LapakShop successfully demonstrates the core fundamentals of Next.js development, including routing, rendering strategies, data fetching patterns, and state management.
 
