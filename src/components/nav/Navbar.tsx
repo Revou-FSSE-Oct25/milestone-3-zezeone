@@ -14,40 +14,60 @@ export default function Navbar() {
   )
 
   return (
-    <nav className="bg-white border-b shadow-sm">
+    <nav className="bg-white border-b shadow-sm sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        
-        <Link href="/" className="text-xl font-bold text-blue-600">
+
+        {/* LOGO */}
+        <Link
+          href="/"
+          className="text-2xl font-bold text-blue-600 hover:scale-105 transition-transform duration-200"
+        >
           LapakShop
         </Link>
 
-        <div className="flex gap-6 items-center">
-          <Link href="/">Home</Link>
+        {/* MENU */}
+        <div className="flex items-center gap-8 text-gray-700 font-medium">
 
-          <Link href="/cart" className="relative">
+          {/* HOME */}
+          <Link
+            href="/"
+            className="relative group"
+          >
+            Home
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+
+          {/* CART */}
+          <Link
+            href="/cart"
+            className="relative group"
+          >
             🛒 Cart
             {totalQty > 0 && (
-              <span className="absolute -top-2 -right-4 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
+              <span className="absolute -top-2 -right-4 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full shadow">
                 {totalQty}
               </span>
             )}
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
           </Link>
 
+          {/* AUTH */}
           {session ? (
-            <>
-              <span className="text-sm">
-                {session.user?.email}
-              </span>
-              <button
-                onClick={() => signOut()}
-                className="text-red-500"
-              >
-                Logout
-              </button>
-            </>
+            <button
+              onClick={() => signOut()}
+              className="px-4 py-1 rounded-md bg-gray-100 hover:bg-gray-200 transition"
+            >
+              Logout
+            </button>
           ) : (
-            <Link href="/login">Login</Link>
+            <Link
+              href="/login"
+              className="px-4 py-1 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
+            >
+              Login
+            </Link>
           )}
+
         </div>
       </div>
     </nav>
