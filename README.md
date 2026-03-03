@@ -1,147 +1,178 @@
-🛍️ LapakShop – Simple E-Commerce with Next.js
-📌 Overview
+# 🛍️ LapakShop – Simple E-Commerce with Next.js
 
-LapakShop is a simple e-commerce web application built using Next.js (App Router).
+## 📌 Overview
+
+LapakShop is a full-stack e-commerce web application built using **Next.js (App Router)** and **TypeScript**.
+
 This project demonstrates modern web development concepts including:
 
-Static Site Generation (SSG)
+- Static Site Generation (SSG)
+- Server-Side Rendering (SSR)
+- Incremental Static Regeneration (ISR)
+- Client-Side Data Fetching (CSR)
+- Dynamic Routing
+- Authentication & Protected Routes
+- Global State Management (Cart)
+- Internal API CRUD
+- Unit Testing
 
-Server-Side Rendering (SSR)
+The application fetches product data from a public API and allows users to browse products, view details, manage a shopping cart, and access protected pages.
 
-Client-Side Data Fetching
+---
 
-Dynamic Routing
+## 🔗 Live Demo
 
-Global State Management (Cart)
+👉 https://milestone-3-zezeone.vercel.app/
 
-Error & Loading Handling
+## 🔗 Source Code
 
-The application fetches product data from a public API and allows users to browse products, view details, and add items to a shopping cart.
+👉 https://github.com/Revou-FSSE-Oct25/milestone-3-zezeone
 
-🔗 Live Demo:
-https://milestone-3-zezeone.vercel.app/
+---
 
-🔗 Source Code Repository:
-https://github.com/Revou-FSSE-Oct25/milestone-3-zezeone
+# 🚀 Features
 
-🚀 Features Implemented
-🏠 Home Page (Product Listing)
+## 🏠 Home Page (Product Listing)
 
-Fetches products from FakeStore API (Escuela API).
+- Fetches products from Escuela API
+- Uses Client-Side Rendering (CSR) with `useEffect`
+- Displays products in a responsive grid layout
+- Shows:
+  - Product image
+  - Product title
+  - Product price
+- Navigation using dynamic routing
 
-Uses Client-Side Rendering (CSR) with useEffect.
+---
 
-Displays products in a responsive grid layout.
+## 📄 Product Detail Page
 
-Shows:
+- Dynamic route using `[id]`
+- Server-Side Rendering (SSR)
+- Uses `generateStaticParams()` for partial pre-rendering
+- Implements `revalidate = 60` (ISR)
+- Displays:
+  - Product image
+  - Title
+  - Description
+  - Price
+- Includes **Add to Cart** functionality
 
-Product image
+---
 
-Product title
+## 🔐 Authentication & Middleware
 
-Product price
+- Login system using **NextAuth (Credentials Provider)**
+- Session handling via `SessionProvider`
+- Protected routes using middleware (`proxy.ts`)
+- Unauthorized users are redirected to the login page
+- Checkout and Admin pages are protected
 
-Clicking a product navigates to its detail page using dynamic routing.
+---
 
-📄 Product Detail Page
+## 🛒 Shopping Cart
 
-Uses Server-Side Rendering (SSR).
-
-Dynamic route using [id].
-
-Fetches product data based on route parameter.
-
-Displays:
-
-Product image
-
-Product title
-
-Product description
-
-Product price
-
-Implements Add to Cart button.
-
-⚡ Performance Optimization
-
-Uses generateStaticParams() to pre-render selected product pages at build time (Hybrid SSG + SSR).
-
-Implements loading.tsx for better loading experience.
-
-Implements error.tsx for graceful error handling.
-
-🛒 Shopping Cart
-
-Global state management using React Context API.
+Global state managed using **React Context API**.
 
 Features:
 
-Add product to cart
+- Add product to cart
+- Auto-increment quantity
+- Remove product
+- Clear cart
+- Persistent cart using localStorage
 
-Increase quantity automatically
+---
 
-Remove product
+## 📦 Admin & API (CRUD)
 
-Clear cart
+Internal API route:
 
-Cart state persists during session navigation.
+Supports:
 
-🧠 Technical Implementation
-✅ Next.js Fundamentals
+- GET – Retrieve products
+- POST – Add product
+- PUT – Update product
+- DELETE – Remove product
 
-Uses App Router
+Admin page allows product management with dynamic UI updates.
 
-File-based routing
+---
 
-Dynamic routing with [id]
+## ⚡ Performance Optimization
 
-Component-based architecture
+- Hybrid SSG + SSR architecture
+- ISR using `revalidate = 60`
+- `loading.tsx` for improved UX
+- `error.tsx` for graceful error handling
+- Optimized fetch caching
 
-Props passing between components
+---
 
-Proper use of useState and useEffect
+## 🧪 Unit Testing
 
-✅ Routing & Navigation
+Testing implemented using:
 
-next/link for client-side navigation
+- Jest
+- React Testing Library
 
-Dynamic route parameter handling
+Coverage:
 
-Server component + Client component separation
+- 72% overall coverage
+- Component rendering tests
+- Cart state management tests
+- Production build verified
 
-No unnecessary page reloads
+Run tests:
 
-✅ Data Fetching Strategy
-Page	Rendering Strategy
-Home	Client-Side Fetching (CSR)
-Product Detail	Server-Side Rendering (SSR)
-FAQ / Promo	Static Site Generation (SSG)
-🛠 Technologies Used
-
-Next.js 16 (App Router)
-
-React 18
-
-TypeScript
-
-Tailwind CSS
-
-Vercel (Deployment)
-
-Public API: https://api.escuelajs.co
-
+```bash
+npm test
 ```
-📁 Project Structure
+
+Check coverage:
+
+```bash
+npm run test:coverage
+```
+
+## 🧠 Technical Implementation
+Next.js Fundamentals
+
+- App Router
+- File-based routing
+- Dynamic routing
+- Server & Client components
+- useState & useEffect
+
+## Data Fetching Strategy
+
+- Home : CSR
+- Product Detail : SSR + ISR
+- FAQ/Promo : SSG
+
+## 🛠 Technologies Used
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- NextAuth
+- Jest & React Testing Library
+- Vercel
+- Public API: https://api.escuelajs.co/
+
+## 📁 Project Structure
+Project follows a modular and scalable structure:
+```
+
 src/
  ├── app/
- │   ├── page.tsx
- │   ├── product/[id]/page.tsx
- │   ├── product/[id]/loading.tsx
- │   ├── product/[id]/error.tsx
- │   ├── cart/page.tsx
- │   ├── faq/page.tsx
- │   ├── promo/page.tsx
+ │   ├── admin/
+ │   ├── api/
+ │   ├── cart/
+ │   ├── checkout/
+ │   ├── product/[id]/
+ │   ├── faq/
+ │   ├── promo/
  │   └── layout.tsx
  │
  ├── components/
@@ -154,11 +185,13 @@ src/
  ├── services/
  │   └── ProductService.ts
  │
- └── types/
-     └── product.ts
-```
-🏁 Conclusion
+ ├── types/
+ │   └── product.ts
+ │
+ └── hooks/
 
-LapakShop successfully demonstrates the core fundamentals of Next.js development, including routing, rendering strategies, data fetching patterns, and state management.
+ ```
 
-This project is structured using modern best practices and follows scalable architecture principles suitable for real-world applications.
+## 🏁 Conclusion
+
+LapakShop demonstrates modern Next.js development practices including rendering strategies, authentication, protected routes, ISR optimization, CRUD API handling, persistent global state, and unit testing.
